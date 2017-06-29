@@ -26,5 +26,10 @@ namespace MVCDemo.Controllers
 
             return View();
         }
+
+        public ActionResult AjaxMethod()
+        {
+            return Json("Hello Ajax from Controller", JsonRequestBehavior.AllowGet);
+        }
     }
 }

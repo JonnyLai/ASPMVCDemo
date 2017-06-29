@@ -10,6 +10,15 @@
 
 <div class="row">
     <div class="col-md-4">
+        <button class="btn btn-default" id="btnAjax">Call Ajax from Controller</button>
+        <p id="btnAjaxCallback">Wait for Ajax Message</p>
+    </div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-4">
         <h2>Getting started</h2>
         <p>
             ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
@@ -29,3 +38,19 @@
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
 </div>
+@section Scripts {
+    <script type="text/javascript">
+        $('#btnAjax').click(function () {
+            $.ajax({
+                url: '/home/AjaxMethod/',
+                async: false,
+                dataType: "json",
+                type: "POST",
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    $('#btnAjaxCallback').text(data);
+                }
+            });
+        });
+    </script>
+}
