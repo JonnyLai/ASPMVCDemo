@@ -9,12 +9,16 @@
 </div>
 
 <div class="row">
-    <div class="col-md-4">
-        <button class="btn btn-default" id="btnAjax">Call Ajax from Controller</button>
+    <div class="col-md-6">
+        <h2>Call Ajax from Controller - POST</h2>
+        <button class="btn btn-default" id="btnAjax">AJAX POST</button>
         <p id="btnAjaxCallback">Wait for Ajax Message</p>
     </div>
-    <div class="col-md-4"></div>
-    <div class="col-md-4"></div>
+    <div class="col-md-6">
+        <h2>Call Ajax from Controller - GET</h2>
+        <button class="btn btn-default" id="btnAjaxGet">AJAX GET</button>
+        <p id="btnAjaxGetCallback">Wait for Ajax Message</p>
+    </div>
 </div>
 <hr />
 <div class="row">
@@ -49,6 +53,19 @@
                 contentType: 'application/json; charset=utf-8',
                 success: function (data) {
                     $('#btnAjaxCallback').text(data);
+                }
+            });
+        });
+
+        $('#btnAjaxGet').click(function () {
+            $.ajax({
+                url: '/home/AjaxMethod/',
+                async: false,
+                dataType: "json",
+                type: "GET",
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    $('#btnAjaxGetCallback').text(data);
                 }
             });
         });
