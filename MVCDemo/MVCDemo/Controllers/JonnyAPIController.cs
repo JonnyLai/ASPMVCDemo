@@ -24,11 +24,13 @@ namespace MVCDemo.Controllers
         }
 
         [Route("JonnyAPI/AjaxMethodWithData")]
-        public JsonResult<MyClass> PostAjaxMethod([FromBody]MyClass cls)
+        public JsonResult<JsonData<MyClass>> PostAjaxMethod([FromBody]MyClass cls)
         {
-            cls.Phone = "Hello Post Api";
-            cls.Age += 1;
-            return Json(cls);
+            JsonData<MyClass> jd = new JsonData<MyClass>();
+            jd.IsSucess = true;
+            jd.Message = "Hello POST API";
+            jd.Data = cls;
+            return Json(jd);
         }
 
         // GET api/<controller>
