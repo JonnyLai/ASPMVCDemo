@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Results;
 
 namespace MVCDemo.Controllers
 {
@@ -20,6 +21,14 @@ namespace MVCDemo.Controllers
         public string GetAjaxMethod()
         {
             return "Hello Ajax from API";
+        }
+
+        [Route("JonnyAPI/AjaxMethodWithData")]
+        public JsonResult<MyClass> PostAjaxMethod([FromBody]MyClass cls)
+        {
+            cls.Phone = "Hello Post Api";
+            cls.Age += 1;
+            return Json(cls);
         }
 
         // GET api/<controller>
@@ -48,5 +57,12 @@ namespace MVCDemo.Controllers
         public void Delete(int id)
         {
         }
+    }
+
+    public class MyClass
+    {
+        public string Name { set; get; }
+        public int Age { set; get; }
+        public string Phone { set; get; }
     }
 }

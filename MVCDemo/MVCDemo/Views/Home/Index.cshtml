@@ -10,6 +10,17 @@
 
 <div class="row">
     <div class="col-md-6">
+        <h2>Call Ajax from API - 傳輸序列化資訊</h2>
+        <button class="btn btn-default" id="btnData">Transport</button>
+        <p id="btnDataCallback">Wait for Ajax Message</p>
+    </div>
+    <div class="col-md-6">
+    </div>
+</div>
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
         <h2>Call Ajax from Controller - POST</h2>
         <button class="btn btn-default" id="btnAjax">AJAX POST</button>
         <p id="btnAjaxCallback">Wait for Ajax Message</p>
@@ -106,6 +117,20 @@
                 contentType: 'application/json; charset=utf-8',
                 success: function (data) {
                     $('#btnAjaxGetCallbackWeb').text(data);
+                }
+            });
+        });
+
+        $('#btnData').click(function () {
+            $.ajax({
+                url: '/JonnyAPI/AjaxMethodWithData',
+                async: true,
+                dataType: "json",
+                type: "POST",
+                data: JSON.stringify({ 'Name': 'Jonny', 'Age': 10, 'Phone': '123456' }),
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    $('#btnDataCallback').text(data.Name + data.Age + data.Phone);
                 }
             });
         });

@@ -43,3 +43,4 @@ E:\80 Sharing\ASPMVCDemo\ASPMVCDemo\MVCDemo\MVCDemo\bin\System.Web.Http.xml
 E:\80 Sharing\ASPMVCDemo\ASPMVCDemo\MVCDemo\MVCDemo\bin\System.Web.Http.WebHost.xml
 E:\80 Sharing\ASPMVCDemo\ASPMVCDemo\MVCDemo\MVCDemo\obj\Debug\MVCDemo.dll
 E:\80 Sharing\ASPMVCDemo\ASPMVCDemo\MVCDemo\MVCDemo\obj\Debug\MVCDemo.pdb
+E:\80 Sharing\ASPMVCDemo\ASPMVCDemo\MVCDemo\MVCDemo\obj\Debug\MVCDemo.csprojResolveAssemblyReference.cache
